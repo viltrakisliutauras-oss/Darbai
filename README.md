@@ -1,2 +1,2 @@
 # Darbai
-<title> Strukturinio progromavimo darbai </title>
+<tittle> Strukturinio progromavimo darbai </tittle>
