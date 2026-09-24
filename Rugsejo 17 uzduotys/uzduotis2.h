@@ -1,0 +1,13 @@
+//
+// Created by s065777 on 9/24/2026.
+//
+
+#ifndef RUGSEJO_17_UZDUOTYS_UZDUOTIS2_H
+#define RUGSEJO_17_UZDUOTYS_UZDUOTIS2_H
+
+
+class uzduotis2 {
+};
+
+
+#endif //RUGSEJO_17_UZDUOTYS_UZDUOTIS2_H
