@@ -1,0 +1,13 @@
+//
+// Created by s065777 on 10/1/2026.
+//
+
+#ifndef RUGSEJO_17_UZDUOTYS_PAVYZDZIAI2_H
+#define RUGSEJO_17_UZDUOTYS_PAVYZDZIAI2_H
+
+
+class pavyzdziai2 {
+};
+
+
+#endif //RUGSEJO_17_UZDUOTYS_PAVYZDZIAI2_H

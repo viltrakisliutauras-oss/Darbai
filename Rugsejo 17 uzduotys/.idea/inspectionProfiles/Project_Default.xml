@@ -1,0 +1,11 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CppAwaiterTypeIsNotClass" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CppCStyleCast" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="CppDFAArrayIndexOutOfBounds" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="CppMsExtNotInitializedStaticConstLocalVar" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CppRedundantStaticSpecifierOnMemberAllocationFunction" enabled="true" level="HINT" enabled_by_default="true" />
+    <inspection_tool class="RsDropRef" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>
