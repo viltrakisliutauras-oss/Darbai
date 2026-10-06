@@ -1,4 +1,4 @@
-#include <iostream>
+1#include <iostream>
 #include <iomanip>
 #include <string>
 
@@ -8,11 +8,11 @@ int main() {
     int balance = 100;
     int choice;
     do {
-        cout << "\n--- SASKAITOS MENIU ---\n";
-        cout << "1. Valiutos Palyginimas\n";
-        cout << "2. Papildyti saskaita\n";
-        cout << "3. Atlikti mokejima\n";
-        cout << "0. Baigti programa\n";
+        cout << "\n---Valiutos Meniu---\n";
+        cout << "1. Valiutos kurso palyginimas su euru\n";
+        cout << "2. Valiutos pirkimas\n";
+        cout << "3. Valiutos pardavimas\n";
+        cout << "4. Išeiti\n";
         cout << "Pasirinkite funkcija\n";
         cin >> choice;
 
@@ -22,7 +22,9 @@ int main() {
                 break;
             case 2: {
                 int amount;
-                cout << "Papildymo suma: ";
+                cout << "1. GPT";
+                cout << "2. USD";
+                cout << "3. INR";
                 cin >> amount;
 
                 if (amount > 0) {
