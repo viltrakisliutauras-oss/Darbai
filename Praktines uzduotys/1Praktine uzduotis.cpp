@@ -9,7 +9,7 @@ int main() {
     int choice;
     do {
         cout << "\n--- SASKAITOS MENIU ---\n";
-        cout << "1. Perziureti saskaitos likuti\n";
+        cout << "1. Valiutos Palyginimas\n";
         cout << "2. Papildyti saskaita\n";
         cout << "3. Atlikti mokejima\n";
         cout << "0. Baigti programa\n";
