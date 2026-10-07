@@ -35,15 +35,22 @@ int main() {
                 else if (valiuta == 3) {cout << "INR_Bendras: 1 Eur = 104.6918 INR\n"
                                                 "INR_Pirkti: 1 Eur =101.3862 INR\n"
                                                 "INR_Parduoti: 1 Eur = 107.8546 INR\n";}
+                if (valiuta < 1 || valiuta > 3) {
+                    cout << "Nera tokio pasirinkimo\n";
                 break;
                 case 2:
-                int valiuta;
+                int suma;
                 cout << "---Valiutos pasirinkimas---\n";
                 cout << "1. GBP\n";
                 cout << "2. USD\n";
                 cout << "3. INR\n";
                 cout << "Pasirinkite valiuta: \n";
                 cin >> valiuta;
+                    if (valiuta < 1 || valiuta > 3) {
+                        cout << "Nera tokio pasirinkimo\n";
+                        if (valiuta == 1) {
+                            cout << "Iveskite suma eurais: ";
+                            cin >> suma;
                 break;
             }
             case 3: {
