@@ -37,14 +37,13 @@ int main() {
                                                 "INR_Parduoti: 1 Eur = 107.8546 INR\n";}
                 break;
                 case 2:
-                int amount;
-                if (amount > 0)
-                break; {
-                    balance += amount;
-                    cout << "Saskaita yra papildyta. \n";
-                } else {
-                    cout << "Netinkama suma";
-                }
+                int valiuta;
+                cout << "---Valiutos pasirinkimas---\n";
+                cout << "1. GBP\n";
+                cout << "2. USD\n";
+                cout << "3. INR\n";
+                cout << "Pasirinkite valiuta: \n";
+                cin >> valiuta;
                 break;
             }
             case 3: {
