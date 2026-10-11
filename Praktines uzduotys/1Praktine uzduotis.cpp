@@ -16,6 +16,8 @@ int main() {
     const double INR_Bendras = 104.6918;
     const double INR_Pirkti = 101.3862;
     const double INR_Parduoti = 107.8546;
+    double suma;
+    double gauta;
     int choice;
     int valiuta;
     cout << fixed << setprecision(2);
@@ -29,8 +31,6 @@ int main() {
         cin >> choice;
         switch (choice) {
             case 1: {
-                double suma;
-                double gauta;
                 cout << "---Valiutos pasirinkimas---\n";
                 cout << "1. GBP\n";
                 cout << "2. USD\n";
@@ -39,30 +39,29 @@ int main() {
                 cin >> valiuta;
                 if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
                     cout << "Iveskite suma eurais: ";}
-                    cin >> suma;
-                    if (valiuta == 1) {
-                        gauta = suma * GBP_Bendras;
-                        cout << "Gauta suma: " << gauta << " GBP\n";}
-                    else if (valiuta == 2) {
-                        gauta = suma * USD_Bendras;
-                        cout << "Gauta suma: " << gauta << " USD\n";}
-                    else if (valiuta == 3) {
-                        gauta = suma * INR_Bendras;
-                        cout << "Gauta suma: " << gauta << " INR\n";}
+                cin >> suma;
+                if (valiuta == 1) {
+                    gauta = suma * GBP_Bendras;
+                    cout << "Gauta suma: " << gauta << " GBP\n";}
+                else if (valiuta == 2) {
+                    gauta = suma * USD_Bendras;
+                    cout << "Gauta suma: " << gauta << " USD\n";}
+                else if (valiuta == 3) {
+                    gauta = suma * INR_Bendras;
+                    cout << "Gauta suma: " << gauta
+                    << " INR\n";}
                 if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
                 break;
             }
             case 2: {
-                double suma;
-                double gauta;
                 cout << "---Valiutos pasirinkimas---\n";
                 cout << "1. GBP\n";
                 cout << "2. USD\n";
                 cout << "3. INR\n";
                 cout << "Pasirinkite valiuta: \n";
                 cin >> valiuta;
-                if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
-                if (valiuta == 1 or 2 or 3) {cout << "Iveskite suma eurais: ";}
+                if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
+                    cout << "Iveskite suma eurais: ";}
                 cin >> suma;
                 if (suma < 0) {cout << "Neteisinga suma.\n";}
                 else if (valiuta == 1) {
@@ -74,29 +73,34 @@ int main() {
                 else if (valiuta == 3) {
                     gauta = suma * INR_Pirkti;
                     cout << "Gauta suma: " << gauta << " INR\n";}
+                if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
+                break;
+            }
+
+            case 3: {
+                cout << "---Valiutos pasirinkimas---\n";
+                cout << "1. GBP\n";
+                cout << "2. USD\n";
+                cout << "3. INR\n";
+                cout << "Pasirinkite valiuta: \n";
+                cin >> valiuta;
+                if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
+                    cout << "Iveskite suma eurais: ";}
+                cin >> suma;
+                if (suma < 0) {cout << "Neteisinga suma.\n";}
+                else if (valiuta == 1) {
+                    gauta = suma * GBP_Parduoti;
+                    cout << "Gauta suma: " << gauta << " GBP\n";}
+                else if (valiuta == 2) {
+                    gauta = suma * USD_Parduoti;
+                    cout << "Gauta suma: " << gauta << " USD\n";}
+                else if (valiuta == 3) {
+                    gauta = suma * INR_Parduoti;
+                    cout << "Gauta suma: " << gauta << " INR\n";}
+                if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
                 break;
             }
         }
-            //           case 3: {
-            //             int amount;
-            //           cout << "Mokejimo suma: ";
-            //         cin >> amount;
-            //       if (amount <= 0) {
-            //         cout << "Neteisinga suma. \n";
-            //   } else if (amount > balance) {
-            //     cout << "Nepakankamas likutis saskaitoje. \n";
-            //    } else {
-            //      balance -= amount;
-            //    cout << "Mokejimas atliktas";
-            //    }
-            //  break;
-            //    }
-            //  case 0:
-            //     cout << "Programa baige darba\n";
-            //   break;
-            //   default:
-            //    cout << "Tokios operacijos nera\n";
-            //   }
              } while (choice != 4);
             return 0;
         }
