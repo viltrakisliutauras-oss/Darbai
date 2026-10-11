@@ -38,7 +38,10 @@ int main() {
                 cout << "3. INR\n";
                 cout << "Pasirinkite valiuta: \n";
                 cin >> valiuta;
-                if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
+                if (valiuta < 1 || valiuta > 3) {
+                    cout << "Nera tokio pasirinkimo\n";
+                    break;
+                }
                 if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
                     cout << "Iveskite suma eurais: ";}
                 cin >> suma;
@@ -62,7 +65,10 @@ int main() {
                 cout << "3. INR\n";
                 cout << "Pasirinkite valiuta: \n";
                 cin >> valiuta;
-                if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
+                if (valiuta < 1 || valiuta > 3) {
+                    cout << "Nera tokio pasirinkimo\n";
+                    break;
+                }
                 if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
                     cout << "Iveskite suma eurais: ";}
                 cin >> suma;
@@ -85,7 +91,10 @@ int main() {
                 cout << "3. INR\n";
                 cout << "Pasirinkite valiuta: \n";
                 cin >> valiuta;
-                if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
+                if (valiuta < 1 || valiuta > 3) {
+                    cout << "Nera tokio pasirinkimo\n";
+                    break;
+                }
                 if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
                     cout << "Iveskite suma: ";}
                 cin >> suma;
