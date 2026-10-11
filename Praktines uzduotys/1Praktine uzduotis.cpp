@@ -40,7 +40,8 @@ int main() {
                 if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
                     cout << "Iveskite suma eurais: ";}
                 cin >> suma;
-                if (valiuta == 1) {
+                if (suma <= 0) {cout << "Neteisinga suma.\n";}
+                else if (valiuta == 1) {
                     gauta = suma * GBP_Bendras;
                     cout << "Gauta suma: " << gauta << " GBP\n";}
                 else if (valiuta == 2) {
@@ -63,7 +64,7 @@ int main() {
                 if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
                     cout << "Iveskite suma eurais: ";}
                 cin >> suma;
-                if (suma < 0) {cout << "Neteisinga suma.\n";}
+                if (suma <= 0) {cout << "Neteisinga suma.\n";}
                 else if (valiuta == 1) {
                     gauta = suma * GBP_Pirkti;
                     cout << "Gauta suma: " << gauta << " GBP\n";}
@@ -76,7 +77,6 @@ int main() {
                 if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
                 break;
             }
-
             case 3: {
                 cout << "---Valiutos pasirinkimas---\n";
                 cout << "1. GBP\n";
@@ -87,13 +87,13 @@ int main() {
                 if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
                     cout << "Iveskite suma eurais: ";}
                 cin >> suma;
-                if (suma < 0) {cout << "Neteisinga suma.\n";}
+                if (suma <= 0) {cout << "Neteisinga suma.\n";}
                 else if (valiuta == 1) {
                     gauta = suma * GBP_Parduoti;
                     cout << "Gauta suma: " << gauta << " GBP\n";}
                 else if (valiuta == 2) {
                     gauta = suma * USD_Parduoti;
-                    cout << "Gauta suma: " << gauta << " USD\n";}
+                    cout <<"Gauta suma: " << gauta << " USD\n";}
                 else if (valiuta == 3) {
                     gauta = suma * INR_Parduoti;
                     cout << "Gauta suma: " << gauta << " INR\n";}
