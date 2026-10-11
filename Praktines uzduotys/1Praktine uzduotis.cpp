@@ -85,18 +85,18 @@ int main() {
                 cout << "Pasirinkite valiuta: \n";
                 cin >> valiuta;
                 if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
-                    cout << "Iveskite suma eurais: ";}
+                    cout << "Iveskite suma: ";}
                 cin >> suma;
                 if (suma <= 0) {cout << "Neteisinga suma.\n";}
                 else if (valiuta == 1) {
                     gauta = suma * GBP_Parduoti;
-                    cout << "Gauta suma: " << gauta << " GBP\n";}
+                    cout << "Gauta suma: " << gauta << " Eur\n";}
                 else if (valiuta == 2) {
                     gauta = suma * USD_Parduoti;
-                    cout <<"Gauta suma: " << gauta << " USD\n";}
+                    cout <<"Gauta suma: " << gauta << " Eur\n";}
                 else if (valiuta == 3) {
                     gauta = suma * INR_Parduoti;
-                    cout << "Gauta suma: " << gauta << " INR\n";}
+                    cout << "Gauta suma: " << gauta << " Eur\n";}
                 if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
                 break;
             }
