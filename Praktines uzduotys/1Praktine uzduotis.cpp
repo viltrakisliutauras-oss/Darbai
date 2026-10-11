@@ -16,9 +16,9 @@ int main() {
     const double INR_Bendras = 104.6918;
     const double INR_Pirkti = 101.3862;
     const double INR_Parduoti = 107.8546;
-    int balance = 100;
     int choice;
     int valiuta;
+    cout << fixed << setprecision(2);
     do {
         cout << "\n---Valiutos Meniu---\n";
         cout << "1. Valiutos kurso palyginimas su euru\n";
@@ -29,22 +29,26 @@ int main() {
         cin >> choice;
         switch (choice) {
             case 1: {
+                double suma;
+                double gauta;
                 cout << "---Valiutos pasirinkimas---\n";
                 cout << "1. GBP\n";
                 cout << "2. USD\n";
                 cout << "3. INR\n";
                 cout << "Pasirinkite valiuta: \n";
                 cin >> valiuta;
-                if (valiuta == 1) {
-                    cout << "GBP_Bendras 1 Eur = 0.8729 GBP\n"
-                            "GBP_Pirkti 1 Eur = 0.8600 GBP\n"
-                            "GBP_Parduoti 1 Eur = 0.9220 GBP\n";}
-                else if (valiuta == 2) {cout << "USD_Bendras 1 Eur = 1.1793 USD\n"
-                                                "USD_Pirkti 1 Eur = 1.1460 USD\n"
-                                                "USD_Parduoti 1 Eur = 1.2340 USD\n";}
-                else if (valiuta == 3) {cout << "INR_Bendras: 1 Eur = 104.6918 INR\n"
-                                                "INR_Pirkti: 1 Eur =101.3862 INR\n"
-                                                "INR_Parduoti: 1 Eur = 107.8546 INR\n";}
+                if (valiuta == 1 || valiuta == 2 || valiuta == 3) {
+                    cout << "Iveskite suma eurais: ";}
+                    cin >> suma;
+                    if (valiuta == 1) {
+                        gauta = suma * GBP_Bendras;
+                        cout << "Gauta suma: " << gauta << " GBP\n";}
+                    else if (valiuta == 2) {
+                        gauta = suma * USD_Bendras;
+                        cout << "Gauta suma: " << gauta << " USD\n";}
+                    else if (valiuta == 3) {
+                        gauta = suma * INR_Bendras;
+                        cout << "Gauta suma: " << gauta << " INR\n";}
                 if (valiuta < 1 || valiuta > 3) {cout << "Nera tokio pasirinkimo\n";}
                 break;
             }
