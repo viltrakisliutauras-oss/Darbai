@@ -29,6 +29,11 @@ int main() {
         cout << "4. Iseiti\n";
         cout << "Pasirinkite: \n";
         cin >> choice;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Nera tokio pasirinkimo\n";
+            continue;}
         if (choice < 1 || choice > 4) {cout << "Nera tokio pasirinkimo\n";}
         switch (choice) {
             case 1: {
