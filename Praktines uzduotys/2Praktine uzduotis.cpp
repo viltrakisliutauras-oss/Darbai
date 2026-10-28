@@ -62,8 +62,56 @@ int main() {
                 }
                 mokiniuKiekis++;
                 cout << "Mokinys pridetas.\n";
-            }
                 break;
+            case 2: {
+                if (mokiniuKiekis == 0) {
+                    cout << "Mokiniu sarasas tuscias.\n";
+                    break;
+                }
+                for (int i = 0; i < mokiniuKiekis; i++) {
+                    cout << i + 1 << ". " << vardai[i] << ": ";
+                    for (int j = 0; j < pazymiuKiekis[i]; j++) {
+                        cout << pazymiai[i][j] << " ";
+                    }
+                }
+                    cout << "\n";
+                break;
+                case 3: {
+                    if (mokiniuKiekis == 0) {
+                        cout << "Mokiniu sarasas tuscias.\n";
+                        break;
+                    }
+                    cout << "Mokinio numeris (1-"
+                         << mokiniuKiekis << "): ";
+                    cin >> mokinys;
+                    if (cin.fail()) {
+                        cin.clear();
+                        cin.ignore(10000, '\n');
+                        cout << "Neteisingas mokinio numeris.\n";
+                        break;
+                    }
+                    if (mokinys < 1 || mokinys > mokiniuKiekis) {
+                        cout << "Neteisingas mokinio numeris. "
+                             << "Iveskite skaiciu nuo 1 iki "
+                             << mokiniuKiekis << ".\n";
+                        break;
+                    }
+                    cout << vardai[mokinys - 1] << " pazymiai: ";
+                    for (int i = 0; i < pazymiuKiekis[mokinys - 1]; i++) {
+                        cout << pazymiai[mokinys - 1][i] << " ";
+                    }
+                    if (pazymiuKiekis[mokinys - 1] == 0) {
+                        cout << "Mokinys pazymiu neturi.";
+                    }
+                    cout << "\n";
+                }
+                    break;
+                }
+                case 4: {}
+                case 5: {}
+                case 6: {}
+                case 7: {}
+            }
             }
         } while (choice !=7);
         return 0;
