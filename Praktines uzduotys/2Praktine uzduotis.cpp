@@ -204,7 +204,37 @@ int main() {
                              << " vidurkis: " << vidurkis << "\n";
                         break;
                     }
-                    case 6: {}
+                    case 6: {
+                        if (mokiniuKiekis == 0) {
+                            cout << "Mokiniu sarasas tuscias.\n";
+                            break;
+                        }
+                        cout << "Mokinio numeris (1-"
+                             << mokiniuKiekis << "): ";
+                        cin >> mokinys;
+                        if (cin.fail()) {
+                            cin.clear();
+                            cin.ignore(10000, '\n');
+                            cout << "Neteisingas mokinio numeris.\n";
+                            break;
+                        }
+                        if (mokinys < 1 || mokinys > mokiniuKiekis) {
+                            cout << "Neteisingas mokinio numeris. "
+                                 << "Iveskite skaiciu nuo 1 iki "
+                                 << mokiniuKiekis << ".\n";
+                            break;
+                        }
+                        for (int i = mokinys - 1; i < mokiniuKiekis - 1; i++) {
+                            vardai[i] = vardai[i + 1];
+                            pazymiuKiekis[i] = pazymiuKiekis[i + 1];
+                            for (int j = 0; j < 10; j++) {
+                                pazymiai[i][j] = pazymiai[i + 1][j];
+                            }
+                        }
+                        mokiniuKiekis--;
+                        cout << "Mokinys pasalintas.\n";
+                        break;
+                    }
                     case 7: cout << "Programa baigta.\n";
                     break;
                     default:
