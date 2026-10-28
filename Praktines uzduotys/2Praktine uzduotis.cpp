@@ -4,7 +4,13 @@
 using namespace std;
 int main() {
     string vardai[100];
+    int mokinys;
+    int pazymioNr;
+    int naujasPazymys;
     int choice;
+    int pazymiai[100][10];
+    int pazymiuKiekis[100] = {};
+    int mokiniuKiekis = 0;
     do {
         cout << "\n--- Mokiniu pazymiu sistema ---\n";
         cout << "1. Ivesti mokini ir jo pazymius\n";
@@ -63,54 +69,108 @@ int main() {
                 mokiniuKiekis++;
                 cout << "Mokinys pridetas.\n";
                 break;
-            case 2: {
-                if (mokiniuKiekis == 0) {
-                    cout << "Mokiniu sarasas tuscias.\n";
-                    break;
-                }
-                for (int i = 0; i < mokiniuKiekis; i++) {
-                    cout << i + 1 << ". " << vardai[i] << ": ";
-                    for (int j = 0; j < pazymiuKiekis[i]; j++) {
-                        cout << pazymiai[i][j] << " ";
-                    }
-                }
-                    cout << "\n";
-                break;
-                case 3: {
+                case 2: {
                     if (mokiniuKiekis == 0) {
                         cout << "Mokiniu sarasas tuscias.\n";
                         break;
                     }
-                    cout << "Mokinio numeris (1-"
-                         << mokiniuKiekis << "): ";
-                    cin >> mokinys;
-                    if (cin.fail()) {
-                        cin.clear();
-                        cin.ignore(10000, '\n');
-                        cout << "Neteisingas mokinio numeris.\n";
-                        break;
-                    }
-                    if (mokinys < 1 || mokinys > mokiniuKiekis) {
-                        cout << "Neteisingas mokinio numeris. "
-                             << "Iveskite skaiciu nuo 1 iki "
-                             << mokiniuKiekis << ".\n";
-                        break;
-                    }
-                    cout << vardai[mokinys - 1] << " pazymiai: ";
-                    for (int i = 0; i < pazymiuKiekis[mokinys - 1]; i++) {
-                        cout << pazymiai[mokinys - 1][i] << " ";
-                    }
-                    if (pazymiuKiekis[mokinys - 1] == 0) {
-                        cout << "Mokinys pazymiu neturi.";
+                    for (int i = 0; i < mokiniuKiekis; i++) {
+                        cout << i + 1 << ". " << vardai[i] << ": ";
+                        for (int j = 0; j < pazymiuKiekis[i]; j++) {
+                            cout << pazymiai[i][j] << " ";
+                        }
                     }
                     cout << "\n";
-                }
                     break;
+                    case 3: {
+                        if (mokiniuKiekis == 0) {
+                            cout << "Mokiniu sarasas tuscias.\n";
+                            break;
+                        }
+                        cout << "Mokinio numeris (1-"
+                             << mokiniuKiekis << "): ";
+                        cin >> mokinys;
+                        if (cin.fail()) {
+                            cin.clear();
+                            cin.ignore(10000, '\n');
+                            cout << "Neteisingas mokinio numeris.\n";
+                            break;
+                        }
+                        if (mokinys < 1 || mokinys > mokiniuKiekis) {
+                            cout << "Neteisingas mokinio numeris. "
+                                 << "Iveskite skaiciu nuo 1 iki "
+                                 << mokiniuKiekis << ".\n";
+                            break;
+                        }
+                        cout << vardai[mokinys - 1] << " pazymiai: ";
+                        for (int i = 0; i < pazymiuKiekis[mokinys - 1]; i++) {
+                            cout << pazymiai[mokinys - 1][i] << " ";
+                        }
+                        if (pazymiuKiekis[mokinys - 1] == 0) {
+                            cout << "Mokinys pazymiu neturi.";
+                        }
+                        cout << "\n";
+                        break;
+                    }
+                    case 4: {if (mokiniuKiekis == 0) {
+                        cout << "Mokiniu sarasas tuscias.\n";
+                        break;
+                    }
+                        cout << "Mokinio numeris (1-"
+                             << mokiniuKiekis << "): ";
+                        cin >> mokinys;
+                        if (cin.fail()) {
+                            cin.clear();
+                            cin.ignore(10000, '\n');
+                            cout << "Neteisingas mokinio numeris.\n";
+                            break;
+                        }
+                        if (mokinys < 1 || mokinys > mokiniuKiekis) {
+                            cout << "Neteisingas mokinio numeris. "
+                                 << "Iveskite skaiciu nuo 1 iki "
+                                 << mokiniuKiekis << ".\n";
+                            break;
+                        }
+                        if (pazymiuKiekis[mokinys - 1] == 0) {
+                            cout << "Mokinys pazymiu neturi.\n";
+                            break;
+                        }
+                        cout << "Pazymio numeris (1-"
+                             << pazymiuKiekis[mokinys - 1] << "): ";
+                        cin >> pazymioNr;
+                        if (cin.fail()) {
+                            cin.clear();
+                            cin.ignore(10000, '\n');
+                            cout << "Neteisingas pazymio numeris.\n";
+                            break;
+                        }
+                        if (pazymioNr < 1 ||
+                            pazymioNr > pazymiuKiekis[mokinys - 1]) {
+                            cout << "Neteisingas pazymio numeris. "
+                                 << "Iveskite skaiciu nuo 1 iki "
+                                 << pazymiuKiekis[mokinys - 1] << ".\n";
+                            break;
+                            }
+                        do {
+                            cout << "Iveskite nauja pazymi (1-10): ";
+                            cin >> naujasPazymys;
+                            if (cin.fail()) {
+                                cin.clear();
+                                cin.ignore(10000, '\n');
+                                naujasPazymys = 0;
+                            }
+                            if (naujasPazymys < 1 || naujasPazymys > 10) {
+                                cout << "Pazymys turi buti nuo 1 iki 10.\n";
+                            }
+                        } while (naujasPazymys < 1 || naujasPazymys > 10);
+                        pazymiai[mokinys - 1][pazymioNr - 1] = naujasPazymys;
+                        cout << "Pazymys atnaujintas.\n";
+                        break;
+                    }
+                    case 5: {}
+                    case 6: {}
+                    case 7: {}
                 }
-                case 4: {}
-                case 5: {}
-                case 6: {}
-                case 7: {}
             }
             }
         } while (choice !=7);
