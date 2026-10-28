@@ -7,6 +7,8 @@ int main() {
     int mokinys;
     int pazymioNr;
     int naujasPazymys;
+    int suma;
+    double vidurkis;
     int choice;
     int pazymiai[100][10];
     int pazymiuKiekis[100] = {};
@@ -112,7 +114,8 @@ int main() {
                         cout << "\n";
                         break;
                     }
-                    case 4: {if (mokiniuKiekis == 0) {
+                    case 4: {
+                        if (mokiniuKiekis == 0) {
                         cout << "Mokiniu sarasas tuscias.\n";
                         break;
                     }
@@ -167,9 +170,45 @@ int main() {
                         cout << "Pazymys atnaujintas.\n";
                         break;
                     }
-                    case 5: {}
+                    case 5: {
+                        if (mokiniuKiekis == 0) {
+                        cout << "Mokiniu sarasas tuscias.\n";
+                        break;
+                    }
+                        cout << "Mokinio numeris (1-"
+                             << mokiniuKiekis << "): ";
+                        cin >> mokinys;
+                        if (cin.fail()) {
+                            cin.clear();
+                            cin.ignore(10000, '\n');
+                            cout << "Neteisingas mokinio numeris.\n";
+                            break;
+                        }
+                        if (mokinys < 1 || mokinys > mokiniuKiekis) {
+                            cout << "Neteisingas mokinio numeris. "
+                                 << "Iveskite skaiciu nuo 1 iki "
+                                 << mokiniuKiekis << ".\n";
+                            break;
+                        }
+                        if (pazymiuKiekis[mokinys - 1] == 0) {
+                            cout << "Mokinys pazymiu neturi.\n";
+                            break;
+                        }
+                        suma = 0;
+                        for (int i = 0; i < pazymiuKiekis[mokinys - 1]; i++) {
+                            suma += pazymiai[mokinys - 1][i];
+                        }
+                        vidurkis = (double)suma / pazymiuKiekis[mokinys - 1];
+                        cout << fixed << setprecision(2);
+                        cout << vardai[mokinys - 1]
+                             << " vidurkis: " << vidurkis << "\n";
+                        break;
+                    }
                     case 6: {}
-                    case 7: {}
+                    case 7: cout << "Programa baigta.\n";
+                    break;
+                    default:
+                    cout << "Nera tokio pasirinkimo.\n";
                 }
             }
             }
