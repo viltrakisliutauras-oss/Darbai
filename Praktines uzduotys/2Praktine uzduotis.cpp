@@ -9,8 +9,8 @@ int main() {
     int naujasPazymys;
     int suma;
     double vidurkis;
-    int choice;
-    int pazymiai[100][10];
+    int choice = 0;
+    int pazymiai[100][10] = {};
     int pazymiuKiekis[100] = {};
     int mokiniuKiekis = 0;
     do {
@@ -34,6 +34,7 @@ int main() {
             case 1: {
                 if (mokiniuKiekis >= 100) {
                     cout << "Mokiniu limitas pasiektas.\n";
+                    break;
                 }
                 cout << "Iveskite mokinio varda: ";
                 cin >> vardai[mokiniuKiekis];
@@ -116,9 +117,9 @@ int main() {
                     }
                     case 4: {
                         if (mokiniuKiekis == 0) {
-                        cout << "Mokiniu sarasas tuscias.\n";
-                        break;
-                    }
+                            cout << "Mokiniu sarasas tuscias.\n";
+                            break;
+                        }
                         cout << "Mokinio numeris (1-"
                              << mokiniuKiekis << "): ";
                         cin >> mokinys;
@@ -172,9 +173,9 @@ int main() {
                     }
                     case 5: {
                         if (mokiniuKiekis == 0) {
-                        cout << "Mokiniu sarasas tuscias.\n";
-                        break;
-                    }
+                            cout << "Mokiniu sarasas tuscias.\n";
+                            break;
+                        }
                         cout << "Mokinio numeris (1-"
                              << mokiniuKiekis << "): ";
                         cin >> mokinys;
@@ -241,7 +242,7 @@ int main() {
                     cout << "Nera tokio pasirinkimo.\n";
                 }
             }
-            }
+        }
         } while (choice !=7);
         return 0;
     }
